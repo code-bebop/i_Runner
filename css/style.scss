@@ -1,0 +1,654 @@
+@font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+$i-blue: #00AEEF;
+$i-black: #2B2B2B;
+
+html {
+  font-size: 10px;
+}
+
+.swiper-wrapper.mousewheel {
+  transition-duration: .6s !important;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  &__top {
+    width: 100%;
+    height: 71px;
+    position: relative;
+    background: #fff;
+    border: {
+      bottom: 1px solid #E5E5E5;
+    }
+    transition: background .1s;
+    &.is-folded {
+      background: transparent;
+      border: none;
+    }
+    &__logo {
+      width: 115px;
+      height: 71px;
+      line-height: 71px;
+      margin-left: 30px;
+      display: inline-block;
+      &__img {
+        background: url(../img/logo-sky.png) no-repeat center center;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__gnb {
+      position: absolute;
+      top: 0;
+      right: 76px;
+      display: none;
+      &__list {
+        &__item {
+          display: inline-block;
+          height: 71px;
+          line-height: 71px;
+          margin-right: 50px;
+          &:last-child {
+            margin-right: 20px;
+          }
+          &__link {
+            width: 100%;
+            height: 100%;
+            display: block;
+            font: {
+              size: 1.8rem;
+              weight: 600;
+            }
+            &:hover {
+              color: $i-blue;
+            }
+          }
+        }
+      }
+    }
+    &__btn-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 76px;
+      height: 70px;
+      border: none;
+      outline: none;
+      background: transparent;
+      cursor: pointer;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 24px;
+        height: 24px;
+        background: url(../img/btn-menu-off-sky.png) no-repeat center center;
+      }
+      &.is-opend {
+        &:before {
+          background: url(../img/btn-menu-on.png) no-repeat center center;
+        }
+      }
+    }
+  }
+  &__product {
+    text-align: center;
+    background: #fff;
+    height: 457px;
+    display: none;
+    &__title {
+      font: {
+        family: 'BMDOHYEON';
+        style: italic;
+        size: 5rem;
+      }
+      padding: {
+        top: 35px;
+      }
+      margin: {
+        bottom: 35px;
+      }
+    }
+    &__list {
+      margin-bottom: 40px;
+      &__item {
+        width: 227px;
+        height: 230px;
+        display: inline-block;
+        border: 1px solid #E8E8E8;
+        position: relative;
+        overflow: hidden;
+        margin-right: -4.5px;
+        &--01 {
+          .header__product__list__item__link {
+            &:before {
+              background: url(../img/img-gnb-p100.png) no-repeat center 40px;
+            }
+          }
+        }
+        &--02 {
+          .header__product__list__item__link {
+            &:before {
+              background: url(../img/img-gnb-x7.png) no-repeat center 50px;
+            }
+          }
+        }
+        &--03 {
+          .header__product__list__item__link {
+            &:before {
+              background: url(../img/img-gnb-smart.png) no-repeat center 30px;
+            }
+          }
+        }
+        &--04 {
+          .header__product__list__item__link {
+            &:before {
+              background: url(../img/img-gnb-jubatus.png) no-repeat center 40px;
+            }
+          }
+        }
+        &__link {
+          width: 100%;
+          height: 100%;
+          display: block;
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all .35s;
+          }
+          &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 10px solid $i-blue;
+            box-sizing: border-box;
+            transition: all .35s;
+            opacity: 0;
+          }
+          &:hover:before {
+            transform: scale(1.1);
+          }
+          &:hover:after {
+            opacity: 1;
+          }
+        }
+        &__title {
+          position: absolute;
+          left: 50%;
+          bottom: 27px;
+          transform: translateX(-50%);
+          font: {
+            size: 1.8rem;
+            weight: 600;
+          }
+        }
+      }
+    }
+    &__term {
+      font: {
+        size: 1.2rem;
+      }
+      &__copyright {
+        display: block;
+        color: #B8B8B8;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.main {
+  &__section {
+    position: relative;
+    &--01 {
+      width: 270.38vh;
+      height: 100vh;
+      &__box {
+        &--left {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 9;
+          width: 69.34vh;
+          height: 100vh;
+          background: #fff;
+          &__txt {
+            font: {
+              family: 'BMDOHYEON';
+              style: italic;
+              weight: 600;
+            }
+            color: $i-black;
+            margin-top: 12.38vh;
+            white-space: nowrap;
+            letter-spacing: .01rem;
+            &__item {
+              display: block;
+              &--01 {
+                font: {
+                  size: 18.36vh;
+                }
+                margin-left: 70px;
+              }
+              &--02 {
+                font: {
+                  size: 18.36vh;
+                }
+                margin-left: 220px;
+              }
+              &--03 {
+                font: {
+                  size: 10.31vh;
+                }
+                margin-left: 190px;
+              }
+              &--04 {
+                font: {
+                  size: 10.31vh;
+                }
+                margin-left: 180px;
+              }
+            }
+          }
+        }
+        &--right {
+          position: absolute;
+          top: 0;
+          left: 182.97vh;
+          width: 83.79vh;
+          height: 100vh;
+          z-index: 11;
+          background: #fff;
+          &__btn--detail {
+            position: absolute;
+            bottom: 19.6vh;
+            left: -47.98vh;
+            width: 20vh;
+            height: 20vh;
+            background-color: $i-blue;
+            display: block;
+            border-radius: 100px;
+            text-align: center;
+            &:hover {
+              background-color: #007CEE;
+            }
+            &__img {
+              padding: {
+                top: 2.5vh;
+                bottom: 3.6vh;
+              }
+              width: 85%;
+            }
+            &__txt {
+              color: #fff;
+              display: block;
+              font: {
+                size: 1.5vh;
+              }
+              &__top {
+                padding-top: 4.1vh;
+                letter-spacing: .25em;
+                opacity: .6;
+              }
+            }
+          }
+          &__txt {
+            margin: {
+              top: 12.38vh;
+              left: 6.7vh;
+            }
+            &__item {
+              font: {
+                size: 1.75vh;
+              }
+              line-height: 3.09vh;
+              letter-spacing: -0.1em;
+              &__b {
+                display: block;
+                margin-bottom: 1.54vh;
+                font: {
+                  size: 2.57vh;
+                  weight: 600;
+                }
+              }
+            }
+          }
+          &__box {
+            width: 54.07vh;
+            height: 54.07vh;
+            background-color: $i-blue;
+            position: absolute;
+            top: 34.46vh;
+            left: 43.75vh;
+            &:after {
+              content: '';
+              display: block;
+              width: 94.94vh;
+              height: 101.13vh;
+              position: absolute;
+              top: 50%;
+              left: 20%;
+              transform: translate(-50%, -50%);
+              background: url(../img/pic-main-runner-m.png);
+              background-size: 94.94vh 101.13vh;
+            }
+          }
+          &__copy {
+            font: {
+              size: 33.33vh;
+              weight: 600;
+              style: italic;
+            }
+            color: $i-black;
+            white-space: nowrap;
+            position: absolute;
+            bottom: 3.61vh;
+            left: 0;
+          }
+        }
+      }
+      &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        width: 198.14vh;
+        height: 100vh;
+        background: url(../img/pic-main1.jpg) no-repeat center center;
+        background-size: 198.14vh 100vh;
+      }
+    }
+    &--02 {
+      width: 266.46vh;
+      height: 100vh;
+      background-color: #191919;
+      z-index: 10;
+      &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        background: url(../img/pic-main2.jpg) no-repeat center center;
+        background-size: 185.75vh 100vh;
+        width: 185.75vh;
+        height: 100vh;
+      }
+      &__box {
+        &--left {
+          position: absolute;
+          top: 7.01vh;
+          left: 96.18vh;
+          z-index: 9;
+          color: #fff;
+          &__txt {
+            font: {
+              size: 1.54vh;
+            }
+            line-height: 2.78vh;
+            &__b {
+              display: block;
+              font: {
+                size: 7.4vh;
+                weight: 600;
+                style: italic;
+              }
+              text-transform: uppercase;
+              line-height: 100%;
+              margin-bottom: 5.15vh;
+            }
+          }
+          &__btn {
+            display: block;
+            width: 20.63vh;
+            height: 5.36vh;
+            margin-top: 5.15vh;
+            padding: 1.44vh 2.78vh;
+            border: 1px solid #fff;
+            background: url(../img/ico-gt-wihte.png) no-repeat center center;
+            background-position: 85% center;
+            position: relative;
+            overflow: hidden;
+            transition: all .2s;
+            &:after {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              background-color: $i-blue;
+              transition: top .2s;
+              z-index: -1;
+            }
+            &:hover {
+              border-color: $i-blue;
+              &:after {
+                top: 0;
+              }
+            }
+            &__txt {
+              font: {
+                size: 1.85vh;
+              }
+            }
+          }
+        }
+        &--right {
+          position: absolute;
+          top: 0;
+          right: -27.86vh;
+          z-index: 9;
+          width: 136.63vh;
+          height: 100vh;
+          &__inner {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 136.63vh;
+            min-width: 136.63vh;
+            height: 64.6vh;
+          }
+          &__img {
+            width: 165.11vh;
+            height: 64.6vh;
+          }
+          &__txt {
+            position: absolute;
+            bottom: 14.65vh;
+            left: 0;
+            color: #fff;
+            font: {
+              size: 7.4vh;
+              weight: 600;
+              style: italic;
+            }
+            text-transform: uppercase;
+            &__1 {
+              display: block;
+            }
+            &__2 {
+              display: block; 
+              margin-left: 24.45vh;
+            }
+          }
+        }
+      }
+    }
+    &--03 {
+      width: 159.13vh;
+      height: 100vh;
+      background-color: #fff;
+      position: relative;
+      &__content {
+        text-align: center;
+        &__txt {
+          margin-top: 13.41vh;
+          &__item {
+            display: block;
+            &--1 {
+              font: {
+                size: 6.1vh;
+                weight: 600;
+                style: italic;
+              }
+            }
+            &--2 {
+              font: {
+                size: 2rem;
+              }
+              color: #B2B2B2;
+              margin: {
+                top: 1.3vh;
+                bottom: 5.15vh;
+              }
+            }
+            &--3 {
+              font: {
+                size: 2.06vh;
+              }
+              color: $i-blue;
+              position: relative;
+              &:before {
+                content: '';
+                display: block;
+                width: 15.17vh;
+                height: 1px;
+                background-color: $i-blue;
+                position: absolute;
+                top: 50%;
+                left: 41%;
+                transform: translate(-50%, -50%);
+              }
+              &:after {
+                content: '';
+                display: block;
+                width: 15.17vh;
+                height: 1px;
+                background-color: $i-blue;
+                position: absolute;
+                top: 50%;
+                right: 31.5%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+        &__timer {
+          display: block;
+          font: {
+            size: 20vh;
+            weight: 600;
+          }
+        }
+      }
+      &__bottom {
+        position: absolute;
+        bottom: 0;
+        left: 50vh;
+        z-index: 9;
+        &__img {
+          width: 55vh;
+          height: 63vh;
+        }
+        &__btn {
+          position: absolute;
+          left: 50%;
+          bottom: 33.53vh;
+          display: block;
+          width: 20.22vh;
+          height: 5.15vh;
+          padding: 1.44vh 2.06vh;
+          background-color: #000;
+          box-sizing: border-box;
+          overflow: hidden;
+          &:hover:before {
+            bottom: 0;
+          }
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $i-blue;
+            transition: bottom .2s;
+          }
+          &__txt {
+            position: relative;
+            display: block;
+            width: 100%;
+            color: #fff;
+            font: {
+              size: 1.85vh;
+              weight: 300;
+            }
+            letter-spacing: 0.3rem;
+            z-index: 10;
+            background: url(../img/ico-gt-wihte.png) no-repeat center center;
+            background-size: 0.7vh 1.4vh;
+            background-position: 100% 100%;
+          }
+        }
+      }
+      &__copy {
+        background: url(../img/main-bottom-logo.png) no-repeat center center;
+        background-size: 156.86vh 27.24vh;
+        width: 156.86vh;
+        height: 27.24vh;
+        position: absolute;
+        bottom: 0;
+        left: -5%;
+        z-index: 8;
+      }
+    }
+  }
+  &__progress {
+    position: fixed;
+    bottom: 3.09vh;
+    left: 2.88vh;
+    z-index: 11;
+    &__title {
+      width: 21.67vh;
+      display: inline-block;
+      font: {
+        size: 3vh;
+        weight: 600;
+        style: italic;
+      }
+      color: $i-blue;
+      margin-bottom: 2.06vh;
+      background: url(../img/ico-arrow-scroll.png) no-repeat center right;
+      background-size: 4.43vh 2.99vh;
+    }
+    &__scrollbar {
+      width: 97.0833vw;
+      height: 2px;
+      background-color: #CCC;
+      overflow: hidden;
+      &__content {
+        width: 0;
+        height: 2px;
+        background-color: $i-blue;
+      }
+    }
+  }
+}
