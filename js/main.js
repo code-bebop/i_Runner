@@ -1,5 +1,23 @@
+function animationHandler(scrollWidth) {
+  if(100 - scrollWidth > 3) {
+    $(".main__section--01__box--right__txt").addClass("play");
+    $(".main__section--01__box--right__copy").addClass("play").attr("data-swiper-parallax-x", -20+"%");
+  }
+  if(100 - scrollWidth > 35) {
+    $(".main__section--02__box--left").addClass("play");
+  }
+  if(100 - scrollWidth > 55) {
+    $(".main__section--02__box--right__txt").addClass("play");
+    $(".main__section--02__box--right__txt__1").attr("data-swiper-parallax-x", 50+"%");
+    $(".main__section--02__box--right__txt__2").attr("data-swiper-parallax-x", -50+"%");
+  }
+  if(100 - scrollWidth > 85) {
+    $(".main__section--03__content").addClass("play");
+  }
+}
+
 function scrollHandler() {
-  let x = 0; //swiper-wrapper의 translateX 값
+  let x = 0;
   
   function getPageSize() { //각 swiper-slide의 width를 더하고, window의 innerWidth를 뺀 값인 pagesize를 반환하는 함수
     let pageSize = -$(window).innerWidth();
@@ -11,7 +29,7 @@ function scrollHandler() {
     return pageSize;
   }
   
-  function getTranslateX(pageSize){ //swiper-wrapper의 translateX를 구하고 pageSize와 더하여 사용자의 swiper-wrapper의 위치를 구한다. swiper-wrapper는 진행방향이 왼쪽이기 때문에 translateX값은 음수이다.
+  function getTranslateX(pageSize){ //swiper-wrapper의 translateX를 구하고 pageSize와 더하여 사용자의 swiper-wrapper의 위치를 구하는 함수
     var matrix = $(".swiper-wrapper").css("transform").replace(/[^0-9\-.,]/g, '').split(',');
     x = matrix[12] || matrix[4];
     
@@ -19,13 +37,20 @@ function scrollHandler() {
     return pageSize + Number(x);
   };
   
+  setTimeout(()=>{
+    $(".main__section--01__box--left__txt").addClass("play");
+    $(".main__section--01__background").addClass("play").attr("data-swiper-parallax-x", -10+"%");
+    $(".main__progress__title").addClass("play");
+  }, 500);
   
   $(".swiper-wrapper").mousemove((e)=>{
     let pageSize = getPageSize(); 
     let currentOffsetX = getTranslateX(pageSize);
-    let scrollWidth = (currentOffsetX/pageSize)*100; //slide-wrapper의 현재 위치를 slide-wrapper의 전체 너비로 나눈 뒤 100을 곱해 slide-wrapper의 현재 위치의 백분율을 구한다.
+    let scrollWidth = (currentOffsetX/pageSize)*100;
     
-    $(".main__progress__scrollbar__content").css("width", 100 - scrollWidth + "%"); //그것을 scrollbar의 너비로 설정해서 시각화 한다.
+    $(".main__progress__scrollbar__content").css("width", 100 - scrollWidth + "%");
+    
+    animationHandler(scrollWidth);
   })
 }
 
