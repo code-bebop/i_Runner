@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+s
+html {
+  font-size: 10px; }
+
+.header__top {
+  padding: 14px 20px; }
+  .header__top__logo {
+    display: inline-block;
+    width: 77px;
+    height: 22px;
+    background: url(../img/logo.png) no-repeat left top;
+    background-size: cover; }
+  .header__top__btn {
+    display: inline-block;
+    width: 13px;
+    height: 15px;
+    margin-top: 5px;
+    float: right;
+    background: url(../img/btn-menu-off-sky.png) no-repeat center center;
+    background-size: cover; }
+    .header__top__btn.is-opened {
+      background: url(../img/btn-menu-on.png) no-repeat center center; }
+
+.header__product {
+  border-top: 1px solid #E5E5E5;
+  padding-top: 50px;
+  text-align: center;
+  display: none; }
+  .header__product.is-opened {
+    display: block; }
+  .header__product__title {
+    font-size: 33px;
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'BMDOHYEON'; }
+  .header__product__list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 326px;
+    margin: 45px auto 30px; }
+    .header__product__list__item {
+      width: 163px;
+      height: 165px;
+      border: 1px solid #E5E5E5;
+      margin-left: -1px;
+      margin-top: -1px; }
+      .header__product__list__item--01 .header__product__list__item__title {
+        width: 50px;
+        height: 10px; }
+      .header__product__list__item--02 .header__product__list__item__link {
+        background: url(../img/img-gnb-x7.png) no-repeat center 35px;
+        background-size: 100px 80px; }
+      .header__product__list__item--03 .header__product__list__item__link {
+        background: url(../img/img-gnb-smart.png) no-repeat center 20px;
+        background-size: 55px 95px; }
+      .header__product__list__item--04 .header__product__list__item__link {
+        background: url(../img/img-gnb-jubatus.png) no-repeat center 35px;
+        background-size: 100px 80px; }
+      .header__product__list__item__link {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: url(../img/img-gnb-p100.png) no-repeat center center;
+        background-size: 100px 80px;
+        position: relative; }
+      .header__product__list__item__title {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+        font-weight: 600;
+        font-family: 'BMDOHYEON'; }
+  .header__product__gnb {
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'BMDOHYEON';
+    text-align: left;
+    margin-left: 15px; }
+    .header__product__gnb__item {
+      margin-bottom: 18px; }
+      .header__product__gnb__item:nth-child(2) {
+        position: relative; }
+      .header__product__gnb__item__list--sub {
+        position: absolute;
+        top: 0;
+        left: 100px;
+        font-weight: 500; }
+        .header__product__gnb__item__list--sub:after {
+          content: '';
+          display: block;
+          width: 23px;
+          height: 1px;
+          background-color: #000;
+          position: absolute;
+          top: 50%;
+          left: -30px; }
+        .header__product__gnb__item__list--sub__item {
+          display: inline-block; }
+
+.main__section--01 {
+  position: relative; }
+  .main__section--01__copy {
+    position: absolute;
+    top: 0;
+    left: 60px; }
+    .main__section--01__copy__txt {
+      font-weight: 600;
+      font-family: 'BMDOHYEON';
+      font-style: italic;
+      color: #2B2B2B; }
+      .main__section--01__copy__txt--01 {
+        font-size: 58px; }
+      .main__section--01__copy__txt--02 {
+        font-size: 58px; }
+      .main__section--01__copy__txt--03 {
+        font-size: 36px; }
+      .main__section--01__copy__txt--04 {
+        font-size: 36px; }
+  .main__section--01__background {
+    width: 100%;
+    height: 372px;
+    background: url(../img/pic-main1.jpg) no-repeat center center;
+    background-size: cover; }
+  .main__section--01__btn {
+    width: 110px;
+    height: 110px;
+    border-radius: 107px;
+    position: absolute;
+    bottom: 44px;
+    right: 17px;
+    background-color: #00AEEF;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 22px; }
+    .main__section--01__btn__txt {
+      color: #fff;
+      font-size: 7px; }
+      .main__section--01__btn__txt--01 {
+        opacity: .6;
+        letter-spacing: 3px;
+        font-weight: 600; }
+      .main__section--01__btn__txt--02 {
+        display: block;
+        width: 67px;
+        height: 12px;
+        background: url(../img/main_b_irunner.png) no-repeat center center;
+        background-size: 67px 12px;
+        margin-top: 14px;
+        margin-bottom: 12px;
+        margin-left: auto;
+        margin-right: auto; }
+  .main__section--01__box {
+    width: 100%;
+    height: 270px;
+    background: #fff; }
+
+.main__section--02 {
+  height: 640px;
+  position: relative; }
+  .main__section--02__txt {
+    position: absolute;
+    top: 45px;
+    left: 63px;
+    width: 260px; }
+    .main__section--02__txt__content {
+      letter-spacing: -1.4px;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 22px; }
+      .main__section--02__txt__content__b {
+        display: block;
+        letter-spacing: -1px;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px; }
+  .main__section--02__background {
+    width: 288px;
+    height: 608px;
+    position: absolute;
+    bottom: -160px;
+    right: 0;
+    background: url(../img/pic-main2.png) no-repeat center center;
+    background-size: cover; }
+  .main__section--02__copy {
+    position: absolute;
+    bottom: 70px;
+    left: 0; }
+    .main__section--02__copy__txt {
+      color: #2B2B2B;
+      white-space: nowrap;
+      font-size: 110px;
+      font-weight: 600;
+      font-style: italic;
+      font-family: 'BMDOHYEON'; }
+
+.main__section--03 {
+  height: 640px;
+  background-color: #191919;
+  position: relative; }
+  .main__section--03__content {
+    position: absolute;
+    bottom: 35px;
+    right: 25px;
+    text-align: right;
+    color: #fff; }
+    .main__section--03__content__copy {
+      font-size: 44px;
+      font-weight: 600;
+      font-style: italic;
+      font-family: 'BMDOHYEON'; }
+    .main__section--03__content__txt {
+      margin: 20px 0;
+      letter-spacing: -.4px;
+      line-height: 22px;
+      font-size: 12px; }
+    .main__section--03__content__btn {
+      width: 148px;
+      height: 36px;
+      border: 1px solid #fff;
+      display: inline-block;
+      text-align: left;
+      padding: 0 14px; }
+      .main__section--03__content__btn__txt {
+        line-height: 32px;
+        display: block;
+        background: url(../img/ico-gt-wihte.png) no-repeat 110px center; }
+  .main__section--03__background {
+    width: 375px;
+    height: 520px; }
+    .main__section--03__background:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../img/m-pic-main3.png) no-repeat center center;
+      background-size: cover; }
+
+.main__section--04 {
+  height: 505px;
+  background-color: #191919;
+  position: relative; }
+  .main__section--04__copy {
+    font-size: 40px;
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'BMDOHYEON';
+    color: #fff;
+    line-height: 50px;
+    position: absolute;
+    bottom: 70px;
+    left: 38px; }
+  .main__section--04__background {
+    width: 100%;
+    height: 278px; }
+    .main__section--04__background:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../img/pic-main-blue-w.png) no-repeat center center;
+      background-size: cover; }
+
+.main__section--05 {
+  height: 645px; }
+  .main__section--05__content {
+    margin-top: 95px;
+    text-align: center;
+    white-space: pre-line; }
+    .main__section--05__content__txt1 {
+      font-size: 32px;
+      font-weight: 600;
+      font-style: italic;
+      font-family: 'BMDOHYEON'; }
+    .main__section--05__content__txt2 {
+      color: #E0E0E0;
+      display: inline-block;
+      font-size: 14px;
+      margin-top: 25px;
+      margin-bottom: 55px; }
+    .main__section--05__content__txt3 {
+      color: #00AEEF;
+      font-size: 12px;
+      font-weight: 600; }
+    .main__section--05__content__timer {
+      display: inline-block;
+      font-size: 58px;
+      font-weight: 400;
+      font-family: 'BMDOHYEON';
+      margin-top: 25px;
+      margin-bottom: 130px; }
+    .main__section--05__content__btn {
+      display: inline-block;
+      width: 135px;
+      height: 35px;
+      background-color: #000; }
+      .main__section--05__content__btn__txt {
+        color: #fff; }

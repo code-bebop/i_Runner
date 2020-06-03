@@ -1,0 +1,436 @@
+$i-blue: #00AEEF;
+$i-black: #2B2B2B;
+
+@font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+s
+
+html {
+  font-size: 10px;
+}
+
+.header {
+  &__top {
+    padding: 14px 20px;
+    &__logo {
+      display: inline-block;
+      width: 77px;
+      height: 22px;
+      background: url(../img/logo.png) no-repeat left top;
+      background-size: cover;
+    }
+    &__btn {
+      display: inline-block;
+      width: 13px;
+      height: 15px;
+      margin-top: 5px;
+      float: right; 
+      background: url(../img/btn-menu-off-sky.png) no-repeat center center;
+      background-size: cover;
+      &.is-opened {
+        background: url(../img/btn-menu-on.png) no-repeat center center;
+      }
+    }
+  }
+  &__product {
+    border-top: 1px solid #E5E5E5;
+    padding-top: 50px;
+    text-align: center;
+    display: none;
+    &.is-opened {
+      display: block;
+    }
+    &__title {
+      font: {
+        size: 33px;
+        weight: 600;
+        style: italic;
+        family: 'BMDOHYEON';
+      }
+    }
+    &__list {
+      display: inline-flex;
+      flex: {
+        wrap: wrap;
+      }
+      width: 326px;
+      margin: 45px auto 30px;
+      &__item {
+        width: 163px;
+        height: 165px;
+        border: 1px solid #E5E5E5;
+        margin: {
+          left: -1px;
+          top: -1px;
+        }
+        &--01 {
+          .header__product__list__item {
+            &__title {
+              width: 50px;
+              height: 10px;
+            }
+          }
+        }
+        &--02 {
+          .header__product__list__item {
+            &__link {
+              background: url(../img/img-gnb-x7.png) no-repeat center 35px;
+              background-size: 100px 80px;
+            }
+          }
+        }
+        &--03 {
+          .header__product__list__item {
+            &__link {
+              background: url(../img/img-gnb-smart.png) no-repeat center 20px;
+              background-size: 55px 95px;
+            }
+          }
+        }
+        &--04 {
+          .header__product__list__item {
+            &__link {
+              background: url(../img/img-gnb-jubatus.png) no-repeat center 35px;
+              background-size: 100px 80px;
+            }
+          }
+        }
+        &__link {
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: url(../img/img-gnb-p100.png) no-repeat center center;
+          background-size: 100px 80px;
+          position: relative;
+        }
+        &__title {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          font: {
+            size: 10px;
+            weight: 600;
+            family: 'BMDOHYEON';
+          }
+        }
+      }
+    }
+    &__gnb {
+      font: {
+        size: 0.8rem;
+        weight: 600;
+        family: 'BMDOHYEON';
+      }
+      text-align: left;
+      margin-left: 15px;
+      &__item {
+        margin-bottom: 18px;
+        &:nth-child(2) {
+          position: relative;
+        }
+        &__list--sub {
+          position: absolute;
+          top: 0;
+          left: 100px;
+          font: {
+            weight: 500;
+          }
+          &:after {
+            content: '';
+            display: block;
+            width: 23px;
+            height: 1px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            left: -30px;
+          }
+          &__item {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main {
+  &__section {
+    &--01 {
+      position: relative;
+      &__copy {
+        position: absolute;
+        top: 0;
+        left: 60px;
+        &__txt {
+          font: {
+            weight: 600;
+            family: 'BMDOHYEON';
+            style: italic;
+          }
+          color: $i-black;
+          &--01 {
+            font: {
+              size: 58px;
+            }
+          }
+          &--02 {
+            font: {
+              size: 58px;
+            }
+          }
+          &--03 {
+            font: {
+              size: 36px;
+            }
+          }
+          &--04 {
+            font: {
+              size: 36px;
+            }
+          }
+        }
+      }
+      &__background {
+        width: 100%;
+        height: 372px;
+        background: url(../img/pic-main1.jpg) no-repeat center center;
+        background-size: cover;
+      }
+      &__btn {
+        width: 110px;
+        height: 110px;
+        border-radius: 107px;
+        position: absolute;
+        bottom: 44px;
+        right: 17px;
+        background-color: $i-blue;
+        text-align: center;
+        padding: {
+          top: 24px;
+          bottom: 22px;
+        }
+        &__txt {
+          color: #fff;
+          font: {
+            size: 7px;
+          }
+          &--01 {
+            opacity: .6;
+            letter-spacing: 3px;
+            font: {
+              weight: 600;
+            }
+          }
+          &--02 {
+            display: block;
+            width: 67px;
+            height: 12px;
+            background: url(../img/main_b_irunner.png) no-repeat center center;
+            background-size: 67px 12px;
+            margin: {
+              top: 14px;
+              bottom: 12px;
+              left: auto;
+              right: auto;
+            }
+          }
+        }
+      }
+      &__box {
+        width: 100%;
+        height: 270px;
+        background: #fff;
+      }
+    }
+    &--02 {
+      height: 640px;
+      position: relative;
+      &__txt {
+        position: absolute;
+        top: 45px;
+        left: 63px;
+        width: 260px;
+        &__content {
+          letter-spacing: -1.4px;
+          font: {
+            size: 12px;
+            weight: 300;
+          }
+          line-height: 22px;
+          &__b {
+            display: block;
+            letter-spacing: -1px;
+            font: {
+              size: 16px;
+              weight: 600;
+            }
+            margin-bottom: 5px;
+          }
+        }
+      }
+      &__background {
+        width: 288px;
+        height: 608px;
+        position: absolute;
+        bottom: -160px;
+        right: 0;
+        background: url(../img/pic-main2.png) no-repeat center center;
+        background-size: cover;
+      }
+      &__copy {
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        &__txt {
+          color: $i-black;
+          white-space: nowrap;
+          font: {
+            size: 110px;
+            weight: 600;
+            style: italic;
+            family: 'BMDOHYEON';
+          }
+        }
+      }
+    }
+    &--03 {
+      height: 640px;
+      background-color: #191919;
+      position: relative;
+      &__content {
+        position: absolute;
+        bottom: 35px;
+        right: 25px;
+        text-align: right;
+        color: #fff;
+        &__copy {
+           font: {
+            size: 44px;
+            weight: 600;
+            style: italic;
+            family: 'BMDOHYEON';
+          }
+        }
+        &__txt {
+          margin: 20px 0;
+          letter-spacing: -.4px;
+          line-height: 22px;
+          font: {
+            size: 12px;
+          }
+        }
+        &__btn {
+          width: 148px;
+          height: 36px;
+          border: 1px solid #fff;
+          display: inline-block;
+          text-align: left;
+          padding: 0 14px;
+          &__txt {
+            line-height: 32px;
+            display: block;
+            background: url(../img/ico-gt-wihte.png) no-repeat 110px center;
+          }
+        }
+      }
+      &__background {
+        width: 375px;
+        height: 520px;
+        &:before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(../img/m-pic-main3.png) no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
+    &--04 {
+      height: 505px;
+      background-color: #191919;
+      position: relative;
+      &__copy {
+        font: {
+          size: 40px;
+          weight: 600;
+          style: italic;
+          family: 'BMDOHYEON';
+        }
+        color: #fff;
+        line-height: 50px;
+        position: absolute;
+        bottom: 70px;
+        left: 38px;
+      }
+      &__background {
+        width: 100%;
+        height: 278px;
+        &:before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(../img/pic-main-blue-w.png) no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
+    &--05 {
+      height: 645px;
+      &__content {
+        margin-top: 95px;
+        text-align: center;
+        white-space: pre-line;
+        &__txt1 {
+          font: {
+            size: 32px;
+            weight: 600;
+            style: italic;
+            family: 'BMDOHYEON';
+          }
+        }
+        &__txt2 {
+          color: #E0E0E0;
+          display: inline-block;
+          font: {
+            size: 14px;
+          }
+          margin: {
+            top: 25px;
+            bottom: 55px;
+          }
+        }
+        &__txt3 {
+          color: $i-blue;
+          font: {
+            size: 12px;
+            weight: 600;
+          }
+        }
+        &__timer {
+          display: inline-block;
+          font: {
+            size: 58px;
+            weight: 400;
+            family: 'BMDOHYEON';
+          }
+          margin: {
+            top: 25px;
+            bottom: 130px;
+          }
+        }
+        &__btn {
+          display: inline-block;
+          width: 135px;
+          height: 35px;
+          background-color: #000;
+          &__txt {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

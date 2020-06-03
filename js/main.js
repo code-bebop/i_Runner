@@ -1,3 +1,14 @@
+function timerHandler() {
+  setInterval(function(){
+    var date = new Date();
+    var hh = date.getHours()>10?date.getHours():"0"+date.getHours();
+    var mm = date.getMinutes()>10?date.getMinutes():"0"+date.getMinutes();
+    var ss = date.getSeconds()>10?date.getSeconds():"0"+date.getSeconds();
+    
+    $(".main__section--03__content__timer").text(`${hh}:${mm}:${ss}`);
+  }, 1000);
+}
+
 function animationHandler(scrollWidth) {
   if(100 - scrollWidth > 3) {
     $(".main__section--01__box--right__txt").addClass("play");
@@ -94,6 +105,7 @@ function init() {
   navFold();
   horizontalScroll();
   scrollHandler();
+  timerHandler();
 }
 
 init();
