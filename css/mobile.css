@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'BMDOHYEON';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff") format("woff");
@@ -8,126 +9,201 @@ s
 html {
   font-size: 10px; }
 
-.header__top {
-  padding: 14px 20px; }
-  .header__top__logo {
-    display: inline-block;
-    width: 77px;
-    height: 22px;
-    background: url(../img/logo.png) no-repeat left top;
-    background-size: cover; }
-  .header__top__btn {
-    display: inline-block;
-    width: 13px;
-    height: 15px;
-    margin-top: 5px;
-    float: right;
-    background: url(../img/btn-menu-off-sky.png) no-repeat center center;
-    background-size: cover; }
-    .header__top__btn.is-opened {
-      background: url(../img/btn-menu-on.png) no-repeat center center; }
-
-.header__product {
-  border-top: 1px solid #E5E5E5;
-  padding-top: 50px;
-  text-align: center;
-  display: none; }
-  .header__product.is-opened {
-    display: block; }
-  .header__product__title {
-    font-size: 33px;
-    font-weight: 600;
-    font-style: italic;
-    font-family: 'BMDOHYEON'; }
-  .header__product__list {
-    display: inline-flex;
-    flex-wrap: wrap;
-    width: 326px;
-    margin: 45px auto 30px; }
-    .header__product__list__item {
-      width: 163px;
-      height: 165px;
-      border: 1px solid #E5E5E5;
-      margin-left: -1px;
-      margin-top: -1px; }
-      .header__product__list__item--01 .header__product__list__item__title {
-        width: 50px;
-        height: 10px; }
-      .header__product__list__item--02 .header__product__list__item__link {
-        background: url(../img/img-gnb-x7.png) no-repeat center 35px;
-        background-size: 100px 80px; }
-      .header__product__list__item--03 .header__product__list__item__link {
-        background: url(../img/img-gnb-smart.png) no-repeat center 20px;
-        background-size: 55px 95px; }
-      .header__product__list__item--04 .header__product__list__item__link {
-        background: url(../img/img-gnb-jubatus.png) no-repeat center 35px;
-        background-size: 100px 80px; }
-      .header__product__list__item__link {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: url(../img/img-gnb-p100.png) no-repeat center center;
-        background-size: 100px 80px;
-        position: relative; }
-      .header__product__list__item__title {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 10px;
-        font-weight: 600;
-        font-family: 'BMDOHYEON'; }
-  .header__product__gnb {
-    font-size: 0.8rem;
-    font-weight: 600;
-    font-family: 'BMDOHYEON';
-    text-align: left;
-    margin-left: 15px; }
-    .header__product__gnb__item {
-      margin-bottom: 18px; }
-      .header__product__gnb__item:nth-child(2) {
-        position: relative; }
-      .header__product__gnb__item__list--sub {
-        position: absolute;
-        top: 0;
-        left: 100px;
-        font-weight: 500; }
-        .header__product__gnb__item__list--sub:after {
-          content: '';
+.header {
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  opacity: 1;
+  transition: opacity .5s; }
+  .header.down {
+    opacity: 0; }
+  .header__top {
+    padding: 14px 20px; }
+    .header__top__logo {
+      display: inline-block;
+      width: 77px;
+      height: 22px;
+      background: url(../img/logo.png) no-repeat left top;
+      background-size: cover; }
+    .header__top__btn {
+      display: inline-block;
+      width: 13px;
+      height: 15px;
+      margin-top: 5px;
+      float: right;
+      background: url(../img/btn-menu-off-sky.png) no-repeat center center;
+      background-size: cover; }
+      .header__top__btn.is-opened {
+        background: url(../img/btn-menu-on.png) no-repeat center center; }
+  .header__product {
+    border-top: 1px solid #E5E5E5;
+    padding-top: 50px;
+    text-align: center;
+    display: none; }
+    .header__product.is-opened {
+      display: block; }
+    .header__product__title {
+      font-size: 33px;
+      font-weight: 600;
+      font-style: italic;
+      font-family: 'BMDOHYEON'; }
+    .header__product__list {
+      display: inline-flex;
+      flex-wrap: wrap;
+      width: 326px;
+      margin: 45px auto 30px; }
+      .header__product__list__item {
+        width: 163px;
+        height: 165px;
+        border: 1px solid #E5E5E5;
+        margin-left: -1px;
+        margin-top: -1px; }
+        .header__product__list__item--01 .header__product__list__item__title {
+          width: 50px;
+          height: 10px; }
+        .header__product__list__item--02 .header__product__list__item__link {
+          background: url(../img/img-gnb-x7.png) no-repeat center 35px;
+          background-size: 100px 80px; }
+        .header__product__list__item--03 .header__product__list__item__link {
+          background: url(../img/img-gnb-smart.png) no-repeat center 20px;
+          background-size: 55px 95px; }
+        .header__product__list__item--04 .header__product__list__item__link {
+          background: url(../img/img-gnb-jubatus.png) no-repeat center 35px;
+          background-size: 100px 80px; }
+        .header__product__list__item__link {
+          width: 100%;
+          height: 100%;
           display: block;
-          width: 23px;
-          height: 1px;
-          background-color: #000;
+          background: url(../img/img-gnb-p100.png) no-repeat center center;
+          background-size: 100px 80px;
+          position: relative; }
+        .header__product__list__item__title {
           position: absolute;
-          top: 50%;
-          left: -30px; }
-        .header__product__gnb__item__list--sub__item {
-          display: inline-block; }
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 10px;
+          font-weight: 600;
+          font-family: 'BMDOHYEON'; }
+    .header__product__gnb {
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'BMDOHYEON';
+      text-align: left;
+      margin-left: 15px; }
+      .header__product__gnb__item {
+        margin-bottom: 18px; }
+        .header__product__gnb__item:nth-child(2) {
+          position: relative; }
+        .header__product__gnb__item__list--sub {
+          position: absolute;
+          top: 0;
+          left: 100px;
+          font-weight: 500; }
+          .header__product__gnb__item__list--sub:after {
+            content: '';
+            display: block;
+            width: 23px;
+            height: 1px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            left: -30px; }
+          .header__product__gnb__item__list--sub__item {
+            display: inline-block; }
+    .header__product__layer {
+      width: 100%;
+      background: #888;
+      height: 100vh; }
+
+.main__progress-bar {
+  width: 1px;
+  height: calc(100% - 107px);
+  background-color: #fff;
+  position: fixed;
+  top: 90px;
+  left: 17px;
+  overflow: hidden;
+  z-index: 11; }
+  .main__progress-bar__content {
+    width: 100%;
+    height: 100%;
+    background-color: #00AEEF; }
 
 .main__section--01 {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .main__section--01__copy {
-    position: absolute;
-    top: 0;
-    left: 60px; }
-    .main__section--01__copy__txt {
+    position: fixed;
+    top: 100px;
+    left: 60px;
+    z-index: 10; }
+    .main__section--01__copy.play .main__section--01__copy__item__effect:after {
+      transform: translateX(110%);
+      opacity: 0; }
+    .main__section--01__copy.play .main__section--01__copy__item__effect:before {
+      transform: translateX(110%);
+      opacity: 0; }
+    .main__section--01__copy.play .main__section--01__copy__item__effect__txt {
+      transform: translateX(-10%); }
+    .main__section--01__copy__item {
       font-weight: 600;
       font-family: 'BMDOHYEON';
       font-style: italic;
-      color: #2B2B2B; }
-      .main__section--01__copy__txt--01 {
-        font-size: 58px; }
-      .main__section--01__copy__txt--02 {
-        font-size: 58px; }
-      .main__section--01__copy__txt--03 {
-        font-size: 36px; }
-      .main__section--01__copy__txt--04 {
-        font-size: 36px; }
+      margin: -5px 0 -5px 30px;
+      color: #2B2B2B;
+      white-space: nowrap; }
+      .main__section--01__copy__item__effect:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #2B2B2B;
+        transform: translateX(-100%);
+        transition: transform 1s, opacity 1s 1s; }
+      .main__section--01__copy__item__effect:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #2B2B2B;
+        transform: translateX(-100%);
+        transition: transform 1s, opacity 1s 1s; }
+      .main__section--01__copy__item__effect__txt {
+        display: block;
+        transform: translateX(110%);
+        transition: transform 1s; }
+      .main__section--01__copy__item--01 {
+        font-size: 80px;
+        margin-left: 0; }
+        .main__section--01__copy__item--01__effect__txt {
+          transition-delay: .2s; }
+      .main__section--01__copy__item--02 {
+        font-size: 80px; }
+        .main__section--01__copy__item--02__effect__txt {
+          transition-delay: .4s; }
+      .main__section--01__copy__item--03 {
+        font-size: 56px; }
+        .main__section--01__copy__item--03__effect__txt {
+          transition-delay: .6s; }
+      .main__section--01__copy__item--04 {
+        font-size: 56px; }
+        .main__section--01__copy__item--04__effect__txt {
+          transition-delay: .8s; }
   .main__section--01__background {
-    width: 100%;
+    width: 728px;
     height: 372px;
     background: url(../img/pic-main1.jpg) no-repeat center center;
-    background-size: cover; }
+    background-size: cover;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 1s 1.2s; }
+    .main__section--01__background.play {
+      opacity: 1;
+      transform: translateX(-35%); }
   .main__section--01__btn {
     width: 110px;
     height: 110px;
@@ -163,12 +239,19 @@ html {
 
 .main__section--02 {
   height: 640px;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .main__section--02__txt {
     position: absolute;
     top: 45px;
     left: 63px;
-    width: 260px; }
+    width: 260px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s; }
+    .main__section--02__txt.play {
+      opacity: 1;
+      transform: translateX(0%); }
     .main__section--02__txt__content {
       letter-spacing: -1.4px;
       font-size: 12px;
@@ -203,13 +286,19 @@ html {
 .main__section--03 {
   height: 640px;
   background-color: #191919;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .main__section--03__content {
     position: absolute;
     bottom: 35px;
     right: 25px;
     text-align: right;
-    color: #fff; }
+    color: #fff;
+    transform: translateX(-105%);
+    transition: transform 1s .5s;
+    z-index: 10; }
+    .main__section--03__content.play {
+      transform: translateX(0%); }
     .main__section--03__content__copy {
       font-size: 44px;
       font-weight: 600;
@@ -217,9 +306,10 @@ html {
       font-family: 'BMDOHYEON'; }
     .main__section--03__content__txt {
       margin: 20px 0;
-      letter-spacing: -.4px;
+      letter-spacing: -1px;
       line-height: 22px;
-      font-size: 12px; }
+      padding-left: 50px;
+      font-size: 11px; }
     .main__section--03__content__btn {
       width: 148px;
       height: 36px;
@@ -233,7 +323,13 @@ html {
         background: url(../img/ico-gt-wihte.png) no-repeat 110px center; }
   .main__section--03__background {
     width: 375px;
-    height: 520px; }
+    height: 520px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s; }
+    .main__section--03__background.play {
+      opacity: 1;
+      transform: translateX(0%); }
     .main__section--03__background:before {
       content: '';
       display: block;
@@ -245,7 +341,8 @@ html {
 .main__section--04 {
   height: 505px;
   background-color: #191919;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .main__section--04__copy {
     font-size: 40px;
     font-weight: 600;
@@ -255,10 +352,20 @@ html {
     line-height: 50px;
     position: absolute;
     bottom: 70px;
-    left: 38px; }
+    left: 38px;
+    transform: translateX(140%);
+    transition: all 1s .5s; }
+    .main__section--04__copy.play {
+      transform: translateX(0%); }
   .main__section--04__background {
     width: 100%;
-    height: 278px; }
+    height: 278px;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s; }
+    .main__section--04__background.play {
+      opacity: 1;
+      transform: translateX(0%); }
     .main__section--04__background:before {
       content: '';
       display: block;
@@ -268,37 +375,169 @@ html {
       background-size: cover; }
 
 .main__section--05 {
-  height: 645px; }
+  height: 640px;
+  position: relative;
+  overflow: hidden; }
   .main__section--05__content {
-    margin-top: 95px;
+    margin-top: 90px;
     text-align: center;
-    white-space: pre-line; }
+    overflow: hidden; }
+    .main__section--05__content.play .main__section--05__content__txt {
+      transform: translateX(0%); }
+    .main__section--05__content.play .main__section--05__content__btn {
+      opacity: 1; }
     .main__section--05__content__txt1 {
-      font-size: 32px;
+      display: block;
+      font-size: 40px;
       font-weight: 600;
       font-style: italic;
-      font-family: 'BMDOHYEON'; }
+      font-family: 'BMDOHYEON';
+      transform: translateX(100%);
+      transition: all 1s; }
     .main__section--05__content__txt2 {
       color: #E0E0E0;
-      display: inline-block;
+      display: block;
       font-size: 14px;
-      margin-top: 25px;
-      margin-bottom: 55px; }
+      margin-top: 10px;
+      margin-bottom: 50px;
+      transform: translateX(-100%);
+      transition: all 1s .5s; }
     .main__section--05__content__txt3 {
+      display: block;
       color: #00AEEF;
       font-size: 12px;
-      font-weight: 600; }
+      font-weight: 600;
+      transform: translateX(100%);
+      transition: all 1s 1s; }
+      .main__section--05__content__txt3:before {
+        content: '';
+        display: block;
+        width: 87px;
+        height: 1px;
+        background-color: #00AEEF;
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%); }
+      .main__section--05__content__txt3:after {
+        content: '';
+        display: block;
+        width: 87px;
+        height: 1px;
+        background-color: #00AEEF;
+        position: absolute;
+        top: 50%;
+        right: 1%;
+        transform: translate(-50%, -50%); }
     .main__section--05__content__timer {
-      display: inline-block;
-      font-size: 58px;
+      display: block;
+      font-size: 64px;
       font-weight: 400;
       font-family: 'BMDOHYEON';
-      margin-top: 25px;
-      margin-bottom: 130px; }
+      margin-top: 20px;
+      margin-bottom: 130px;
+      transform: translateX(-100%);
+      transition: all 1s 1.5s; }
     .main__section--05__content__btn {
       display: inline-block;
       width: 135px;
       height: 35px;
-      background-color: #000; }
+      background-color: #000;
+      padding: 0 15px;
+      text-align: left;
+      opacity: 0;
+      transition: all 1s 2s; }
       .main__section--05__content__btn__txt {
-        color: #fff; }
+        display: block;
+        color: #fff;
+        line-height: 33px;
+        font-size: 12px;
+        background: url(../img/ico-gt-wihte.png) no-repeat 95px center; }
+  .main__section--05__background {
+    width: 342px;
+    height: 300px;
+    background: url(../img/pic-main4.png) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    bottom: 35px;
+    left: 17px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s 1.8s, opacity 1s 2s; }
+    .main__section--05__background.play {
+      opacity: 1;
+      transform: translateX(0%); }
+  .main__section--05__copy {
+    width: 330px;
+    height: 58px;
+    background: url(../img/main-bottom-logo.png) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    bottom: 22px;
+    left: 17px;
+    z-index: 10; }
+
+.main__btn--top {
+  display: block;
+  width: 43px;
+  height: 37px;
+  background-color: #000;
+  border: none;
+  position: fixed;
+  bottom: 0px;
+  right: 17px;
+  z-index: 11;
+  opacity: 0;
+  transition: opacity .5s; }
+  .main__btn--top.on {
+    opacity: .7; }
+  .main__btn--top:after {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 12px;
+    background: url(../img/btn-top.png) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%); }
+
+.footer {
+  height: 160px;
+  background: #000;
+  padding: 1px 35px 0;
+  text-align: center; }
+  .footer__logo {
+    margin: 20px 0 20px; }
+    .footer__logo__img {
+      width: 72px;
+      height: 20px; }
+  .footer__info {
+    color: #fff;
+    font-size: 8px;
+    font-weight: 600; }
+  .footer__term {
+    margin-bottom: 10px;
+    opacity: .8; }
+    .footer__term__item {
+      display: inline; }
+      .footer__term__item:after {
+        content: 'ㅣ';
+        display: inline; }
+      .footer__term__item:last-child:after {
+        display: none; }
+  .footer__address {
+    opacity: .4;
+    font-style: normal; }
+    .footer__address__item {
+      line-height: 15px; }
+      .footer__address__item:last-child {
+        display: block; }
+      .footer__address__item:after {
+        content: 'ㅣ';
+        display: inline; }
+      .footer__address__item:nth-child(3n):after {
+        display: none; }
+      .footer__address__item:last-child:after {
+        display: none; }

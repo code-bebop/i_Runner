@@ -9,6 +9,17 @@ html {
 }
 
 .header {
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  opacity: 1;
+  transition: opacity .5s;
+  &.down {
+    opacity: 0;
+  }
   &__top {
     padding: 14px 20px;
     &__logo {
@@ -151,51 +162,143 @@ html {
         }
       }
     }
+    &__layer {
+      width: 100%;
+      background: #888;
+      height: 100vh;
+    }
   }
 }
 
 .main {
+  &__progress-bar {
+    width: 1px;
+    height: calc(100% - 107px);
+    background-color: #fff;
+    position: fixed;
+    top: 90px;
+    left: 17px;
+    overflow: hidden;
+    z-index: 11;
+    &__content {
+      width: 100%;
+      height: 100%;
+      background-color: $i-blue;
+    }
+  }
   &__section {
     &--01 {
       position: relative;
+      overflow: hidden;
       &__copy {
-        position: absolute;
-        top: 0;
+        position: fixed;
+        top: 100px;
         left: 60px;
-        &__txt {
+        z-index: 10;
+        &.play {
+          .main__section--01__copy__item__effect {
+            &:after {
+              transform: translateX(110%);
+              opacity: 0;
+            }
+            &:before {
+              transform: translateX(110%);
+              opacity: 0;
+            }
+            &__txt {
+              transform: translateX(-10%);
+            }
+          }
+        }
+        &__item {
           font: {
             weight: 600;
             family: 'BMDOHYEON';
             style: italic;
           }
+          margin: -5px 0 -5px 30px;
           color: $i-black;
+          white-space: nowrap;
+          &__effect {
+            &:before {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 1px;
+              background-color: $i-black;
+              transform: translateX(-100%);
+              transition: transform 1s, opacity 1s 1s;
+            }
+            &:after {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 1px;
+              background-color: $i-black;
+              transform: translateX(-100%);
+              transition: transform 1s, opacity 1s 1s;
+            }
+            &__txt {
+              display: block;
+              transform: translateX(110%);
+              transition: transform 1s;
+            }
+          }
           &--01 {
             font: {
-              size: 58px;
+              size: 80px;
+            }
+            margin-left: 0;
+            &__effect {
+              &__txt {
+                transition-delay: .2s
+              }
             }
           }
           &--02 {
             font: {
-              size: 58px;
+              size: 80px;
+            }
+            &__effect {
+              &__txt {
+                transition-delay: .4s
+              }
             }
           }
           &--03 {
             font: {
-              size: 36px;
+              size: 56px;
+            }
+            &__effect {
+              &__txt {
+                transition-delay: .6s
+              }
             }
           }
           &--04 {
             font: {
-              size: 36px;
+              size: 56px;
+            }
+            &__effect {
+              &__txt {
+                transition-delay: .8s
+              }
             }
           }
         }
       }
       &__background {
-        width: 100%;
+        width: 728px;
         height: 372px;
         background: url(../img/pic-main1.jpg) no-repeat center center;
         background-size: cover;
+        opacity: 0;
+        transform: translateX(50%);
+        transition: all 1s 1.2s;
+        &.play {
+          opacity: 1;
+          transform: translateX(-35%);
+        }
       }
       &__btn {
         width: 110px;
@@ -246,11 +349,19 @@ html {
     &--02 {
       height: 640px;
       position: relative;
+      overflow: hidden;
       &__txt {
         position: absolute;
         top: 45px;
         left: 63px;
         width: 260px;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 1s;
+        &.play {
+          opacity: 1;
+          transform: translateX(0%);
+        }
         &__content {
           letter-spacing: -1.4px;
           font: {
@@ -298,12 +409,19 @@ html {
       height: 640px;
       background-color: #191919;
       position: relative;
+      overflow: hidden;
       &__content {
         position: absolute;
         bottom: 35px;
         right: 25px;
         text-align: right;
         color: #fff;
+        transform: translateX(-105%);
+        transition: transform 1s .5s;
+        z-index: 10;
+        &.play {
+          transform: translateX(0%);
+        }
         &__copy {
            font: {
             size: 44px;
@@ -314,10 +432,11 @@ html {
         }
         &__txt {
           margin: 20px 0;
-          letter-spacing: -.4px;
+          letter-spacing: -1px;
           line-height: 22px;
+          padding-left: 50px;
           font: {
-            size: 12px;
+            size: 11px;
           }
         }
         &__btn {
@@ -337,6 +456,13 @@ html {
       &__background {
         width: 375px;
         height: 520px;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 1s;
+        &.play {
+          opacity: 1;
+          transform: translateX(0%);
+        }
         &:before {
           content: '';
           display: block;
@@ -351,6 +477,7 @@ html {
       height: 505px;
       background-color: #191919;
       position: relative;
+      overflow: hidden;
       &__copy {
         font: {
           size: 40px;
@@ -363,10 +490,22 @@ html {
         position: absolute;
         bottom: 70px;
         left: 38px;
+        transform: translateX(140%);
+        transition: all 1s .5s;
+        &.play {
+          transform: translateX(0%);
+        }
       }
       &__background {
         width: 100%;
         height: 278px;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 1s;
+        &.play {
+          opacity: 1;
+          transform: translateX(0%);
+        }
         &:before {
           content: '';
           display: block;
@@ -378,58 +517,223 @@ html {
       }
     }
     &--05 {
-      height: 645px;
+      height: 640px;
+      position: relative;
+      overflow: hidden;
       &__content {
-        margin-top: 95px;
+        margin-top: 90px;
         text-align: center;
-        white-space: pre-line;
+        overflow: hidden;
+        &.play {
+          .main__section--05__content {
+            &__txt {
+              transform: translateX(0%);
+            }
+            &__btn {
+              opacity: 1;
+            }
+          }
+        }
         &__txt1 {
+          display: block;
           font: {
-            size: 32px;
+            size: 40px;
             weight: 600;
             style: italic;
             family: 'BMDOHYEON';
           }
+          transform: translateX(100%);
+          transition: all 1s;
         }
         &__txt2 {
           color: #E0E0E0;
-          display: inline-block;
+          display: block;
           font: {
             size: 14px;
           }
           margin: {
-            top: 25px;
-            bottom: 55px;
+            top: 10px;
+            bottom: 50px;
           }
+          transform: translateX(-100%);
+          transition: all 1s .5s;
         }
         &__txt3 {
+          display: block;
           color: $i-blue;
           font: {
             size: 12px;
             weight: 600;
           }
+          transform: translateX(100%);
+          transition: all 1s 1s;
+          &:before {
+            content: '';
+            display: block;
+            width: 87px;
+            height: 1px;
+            background-color: $i-blue;
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+          }
+          &:after {
+            content: '';
+            display: block;
+            width: 87px;
+            height: 1px;
+            background-color: $i-blue;
+            position: absolute;
+            top: 50%;
+            right: 1%;
+            transform: translate(-50%, -50%);
+          }
         }
         &__timer {
-          display: inline-block;
+          display: block;
           font: {
-            size: 58px;
+            size: 64px;
             weight: 400;
             family: 'BMDOHYEON';
           }
           margin: {
-            top: 25px;
+            top: 20px;
             bottom: 130px;
           }
+          transform: translateX(-100%);
+          transition: all 1s 1.5s;
         }
         &__btn {
           display: inline-block;
           width: 135px;
           height: 35px;
           background-color: #000;
+          padding: 0 15px;
+          text-align: left;
+          opacity: 0;
+          transition: all 1s 2s;
           &__txt {
+            display: block;
             color: #fff;
+            line-height: 33px;
+            font: {
+              size: 12px;
+            }
+            background: url(../img/ico-gt-wihte.png) no-repeat 95px center;
           }
         }
+      }
+      &__background {
+        width: 342px;
+        height: 300px;
+        background: url(../img/pic-main4.png) no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        bottom: 35px;
+        left: 17px;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 1s 1.8s, opacity 1s 2s;
+        &.play {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+      &__copy {
+        width: 330px;
+        height: 58px;
+        background: url(../img/main-bottom-logo.png) no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        bottom: 22px;
+        left: 17px;
+        z-index: 10;
+      }
+    }
+  }
+  &__btn--top {
+    display: block;
+    width: 43px;
+    height: 37px;
+    background-color: #000;
+    border: none;
+    position: fixed;
+    bottom: 0px;
+    right: 17px;
+    z-index: 11;
+    opacity: 0;
+    transition: opacity .5s;
+    &.on {
+      opacity: .7;
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 9px;
+      height: 12px;
+      background: url(../img/btn-top.png) no-repeat center center;
+      background-size: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-60%, -50%);
+    }
+  }
+}
+
+.footer {
+  height: 160px;
+  background: #000;
+  padding: 1px 35px 0;
+  text-align: center;
+  &__logo {
+    margin: 20px 0 20px;
+    &__img {
+      width: 72px;
+      height: 20px;
+    }
+  }
+  &__info {
+    color: #fff;
+    font: {
+      size: 8px;
+      weight: 600;
+    }
+  }
+  &__term {
+    margin-bottom: 10px;
+    opacity: .8;
+    &__item {
+      display: inline;
+      &:after {
+        content: 'ㅣ';
+        display: inline;
+      }
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+  &__address {
+    opacity: .4;
+    font: {
+      style: normal;
+    }
+    &__item {
+      line-height: 15px;
+      &:last-child {
+        display: block;
+      }
+      &:after {
+        content: 'ㅣ';
+        display: inline;
+      }
+      &:nth-child(3n):after {
+        display: none;
+      }
+      &:last-child:after {
+        display: none;
       }
     }
   }
