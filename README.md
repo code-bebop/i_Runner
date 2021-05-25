@@ -2,7 +2,7 @@
 
 데모 사이트 : 
 
-[아이러너 홈페이지 클론코딩 프로젝트]: http://codebebop.dothome.co.kr/I_runner/
+[아이러너 홈페이지 클론코딩 프로젝트](http://codebebop.dothome.co.kr/I_runner/)
 
 퍼블리싱을 배운지 5개월 즈음 되었을 때 진행한 토이 프로젝트이다.
 
